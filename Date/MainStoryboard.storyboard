@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="y8G-fw-Qy8">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Kc-vf-IO0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6V-Ah-QEG">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R6V-Ah-QEG" firstAttribute="trailing" secondItem="8Kc-vf-IO0" secondAttribute="trailing" type="default" id="Nw1-lo-kr2"/>
+                            <constraint firstItem="R6V-Ah-QEG" firstAttribute="leading" secondItem="8Kc-vf-IO0" secondAttribute="leading" type="default" id="R80-W9-HRD"/>
+                            <constraint firstItem="R6V-Ah-QEG" firstAttribute="top" secondItem="8Kc-vf-IO0" secondAttribute="top" type="default" id="jZq-6o-OOe"/>
+                            <constraint firstItem="R6V-Ah-QEG" firstAttribute="bottom" secondItem="8Kc-vf-IO0" secondAttribute="bottom" type="default" id="vhw-fD-jdB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="W3c-VY-Kke"/>
+                    <connections>
+                        <outlet property="webview" destination="R6V-Ah-QEG" id="Fho-vi-eD6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1154" y="38"/>
+        </scene>
+        <!--Login Controller-->
+        <scene sceneID="6kQ-Ss-2Kh">
+            <objects>
+                <viewController id="k8c-4x-gP7" customClass="LoginController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tdJ-YV-7xn">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iK-S5-XK1">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="VDg-ry-eGf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="QQ登录">
+                                    <color key="titleColor" red="0.9719587053571429" green="0.60769048705231388" blue="0.2891358168598106" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="qqLoginBtn:" destination="k8c-4x-gP7" eventType="touchUpInside" id="f94-1C-MQp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agR-Tf-hOJ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="O3D-RU-7aM"/>
+                                    <constraint firstAttribute="width" constant="209" id="v3O-Xo-2Km"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="微博登录">
+                                    <color key="titleColor" red="0.97195870539999996" green="0.60769048709999995" blue="0.28913581690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sinaLoginBtn:" destination="k8c-4x-gP7" eventType="touchUpInside" id="FeW-Mx-wEv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98086734689999999" green="0.70054738885963497" blue="0.72816226749212809" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="agR-Tf-hOJ" secondAttribute="bottom" constant="133" id="1qn-to-SOs"/>
+                            <constraint firstItem="agR-Tf-hOJ" firstAttribute="leading" secondItem="9iK-S5-XK1" secondAttribute="leading" type="default" id="KWL-oM-CBh"/>
+                            <constraint firstItem="9iK-S5-XK1" firstAttribute="centerX" secondItem="tdJ-YV-7xn" secondAttribute="centerX" type="default" id="N9E-5U-aE0"/>
+                            <constraint firstItem="agR-Tf-hOJ" firstAttribute="trailing" secondItem="9iK-S5-XK1" secondAttribute="trailing" type="default" id="Nhc-6h-ezM"/>
+                            <constraint firstAttribute="bottom" secondItem="9iK-S5-XK1" secondAttribute="bottom" constant="84" id="VdY-Av-mXA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CsW-mH-9Cx"/>
+                    <connections>
+                        <outlet property="qqLoinnBtn" destination="9iK-S5-XK1" id="4iE-kN-OTR"/>
+                        <outlet property="sinaLoinnBtn" destination="agR-Tf-hOJ" id="X7g-me-bDw"/>
+                        <segue destination="2" kind="push" identifier="ViewControllerFromLogin" id="WNR-T0-lzN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gra-f6-kND" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="715" y="38"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SPh-el-iDb">
+            <objects>
+                <navigationController id="y8G-fw-Qy8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YJF-LF-LCd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="k8c-4x-gP7" kind="relationship" relationship="rootViewController" id="uLL-zK-KbB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEX-RQ-ev6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189" y="38"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
