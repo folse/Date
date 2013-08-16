@@ -203,6 +203,14 @@ MBProgressHUD *HUD;
         NSString *openId = [USER objectForKey:@"OpenId"];
         openUserId = [NSString stringWithFormat:@"platform%@",openId];
         
+        if (openUserName == nil) {
+            openUserName = @"";
+        }
+        
+        if (openUserAvatar == nil) {
+            openUserAvatar = @"";
+        }
+        
         //去我们服务器做注册或登录
         [self userLogin];
         
@@ -243,14 +251,14 @@ MBProgressHUD *HUD;
             
             s(JSON);
             
-            if ([JSON valueForKey:@"ret"] == 0) {
+            if ([[JSON valueForKey:@"ret"] integerValue] == 0) {
                 
                 [USER setBool:YES forKey:@"userLogined"];
                 
                 [HUD hide:YES];
                 
-                [self performSegueWithIdentifier:@"ViewControllerFromLogin" sender:self];
-                
+                [self dismissViewControllerAnimated:YES completion:nil];
+                                                
             }
             
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {

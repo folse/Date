@@ -1,23 +1,29 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  Date
 //
 //  Created by folse on 8/9/13.
 //  Copyright (c) 2013 folse. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (!USER_LOGIN) {
+        [self performSegueWithIdentifier:@"LoginFromMain" sender:self];
+    }
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     
     NSURL *url = [NSURL URLWithString:@"http://dev.zh.ongl.in/client/calendar"];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
@@ -28,6 +34,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)backBtnAction:(id)sender {
+    
+    [_webview goBack];
+    
 }
 
 @end

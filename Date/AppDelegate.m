@@ -19,7 +19,7 @@
     // Override point for customization after application launch.
     
     
-    [UMSocialData setAppKey:@"51b15bff56240bb3f2031834"];
+    [UMSocialData setAppKey:@"520db1eb56240b696400c878"];
     [UMSocialData openLog:YES];
     
     [UMSocialControllerService defaultControllerService].socialData.extConfig.wxMessageType = UMSocialWXMessageTypeApp;

@@ -16,7 +16,7 @@
 		A1C70BFA17B4F86500248947 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C70BF917B4F86500248947 /* Default.png */; };
 		A1C70BFC17B4F86500248947 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C70BFB17B4F86500248947 /* Default@2x.png */; };
 		A1C70BFE17B4F86500248947 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C70BFD17B4F86500248947 /* Default-568h@2x.png */; };
-		A1C70C0417B4F86500248947 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C70C0317B4F86500248947 /* ViewController.m */; };
+		A1C70C0417B4F86500248947 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C70C0317B4F86500248947 /* MainViewController.m */; };
 		A1C70C0B17B4F89000248947 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1C70C0A17B4F89000248947 /* MainStoryboard.storyboard */; };
 		A1C70C0E17B4F8CC00248947 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C70C0D17B4F8CC00248947 /* LoginController.m */; };
 		A1C70C4917B4F95300248947 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C70C1417B4F95300248947 /* AFHTTPClient.m */; };
@@ -66,8 +66,8 @@
 		A1C70BF917B4F86500248947 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A1C70BFB17B4F86500248947 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A1C70BFD17B4F86500248947 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		A1C70C0217B4F86500248947 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A1C70C0317B4F86500248947 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A1C70C0217B4F86500248947 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A1C70C0317B4F86500248947 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		A1C70C0A17B4F89000248947 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A1C70C0C17B4F8CC00248947 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
 		A1C70C0D17B4F8CC00248947 /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginController.m; sourceTree = "<group>"; };
@@ -193,8 +193,8 @@
 				A1C70BF617B4F86500248947 /* AppDelegate.h */,
 				A1C70BF717B4F86500248947 /* AppDelegate.m */,
 				A1C70C0A17B4F89000248947 /* MainStoryboard.storyboard */,
-				A1C70C0217B4F86500248947 /* ViewController.h */,
-				A1C70C0317B4F86500248947 /* ViewController.m */,
+				A1C70C0217B4F86500248947 /* MainViewController.h */,
+				A1C70C0317B4F86500248947 /* MainViewController.m */,
 				A1C70C0C17B4F8CC00248947 /* LoginController.h */,
 				A1C70C0D17B4F8CC00248947 /* LoginController.m */,
 				A1C70C6017B4F95800248947 /* Vendor */,
@@ -401,7 +401,7 @@
 			files = (
 				A1C70BF417B4F86500248947 /* main.m in Sources */,
 				A1C70BF817B4F86500248947 /* AppDelegate.m in Sources */,
-				A1C70C0417B4F86500248947 /* ViewController.m in Sources */,
+				A1C70C0417B4F86500248947 /* MainViewController.m in Sources */,
 				A1C70C0E17B4F8CC00248947 /* LoginController.m in Sources */,
 				A1C70C4917B4F95300248947 /* AFHTTPClient.m in Sources */,
 				A1C70C4A17B4F95300248947 /* AFHTTPRequestOperation.m in Sources */,
@@ -558,6 +558,7 @@
 				A1C70C0917B4F86500248947 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
