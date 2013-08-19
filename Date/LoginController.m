@@ -98,7 +98,7 @@ NSString *inputType = @"mobile";
         
         }else {
         
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您还未在商家进行绑定" delegate:self cancelButtonTitle:nil otherButtonTitles:nil, nil];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请在商家绑定后继续" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
             
             [alertView show];
             

@@ -62,12 +62,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzh-WO-ZkD">
+                                <color key="backgroundColor" red="0.011764705882352941" green="0.78823529411764703" blue="0.47058823529411764" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="EB9-zW-d0k"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="登录">
-                                    <color key="titleColor" red="0.97254908084869385" green="0.70196080207824707" blue="0.73333334922790527" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleColor" red="0.011764705882352941" green="0.78823529411764703" blue="0.47058823529411764" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -78,7 +79,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.98086734689999999" green="0.70054738885963497" blue="0.72816226749212809" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.011764705882352941" green="0.78823529411764703" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="rnW-MH-h0E" firstAttribute="centerX" secondItem="49n-km-BxJ" secondAttribute="centerX" type="default" id="27o-B4-b2d"/>
                             <constraint firstItem="49n-km-BxJ" firstAttribute="top" secondItem="tdJ-YV-7xn" secondAttribute="top" constant="145" id="BPH-fy-iG5"/>
@@ -104,6 +105,7 @@
         <class className="LoginController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginController.h"/>
             <relationships>
+                <relationship kind="action" name="loginBtnAction:"/>
                 <relationship kind="outlet" name="inputTF" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="loginBtn" candidateClass="UIButton"/>
             </relationships>
