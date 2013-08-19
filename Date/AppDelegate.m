@@ -7,23 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import <TencentOpenAPI/TencentOAuth.h>
-#import "UMSocialData.h"
-#import "UMSocialSnsService.h"
-#import "UMSocialControllerService.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
-    
-    [UMSocialData setAppKey:@"520db1eb56240b696400c878"];
-    [UMSocialData openLog:YES];
-    
-    [UMSocialControllerService defaultControllerService].socialData.extConfig.wxMessageType = UMSocialWXMessageTypeApp;
-    [UMSocialControllerService defaultControllerService].socialData.extConfig.appUrl = @"https://itunes.apple.com/cn/app/qian-fangqpos/id587767923?l=en&mt=8";
+    [MobClick startWithAppkey:@"520db1eb56240b696400c878" reportPolicy:SEND_ON_EXIT channelId:@"AppStore"];
         
     return YES;
 }
@@ -56,13 +46,7 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *) sourceApplication annotation:(id)annotation
-{
-    NSString *urlString = [url absoluteString];
-    s(urlString);
-    if([[urlString substringToIndex:7] isEqualToString:@"tencent"]){
-        return [TencentOAuth HandleOpenURL:url];
-    }
-    
+{    
     return YES;
 }
 

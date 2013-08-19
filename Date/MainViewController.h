@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController<MBProgressHUDDelegate, UIWebViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIWebView *webview;
 

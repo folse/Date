@@ -14,9 +14,18 @@
 
 @implementation MainViewController
 
+MBProgressHUD *HUD;
+
 - (void)viewDidAppear:(BOOL)animated
 {
-    if (!USER_LOGIN) {
+    [super viewDidAppear:animated];
+    
+    if (USER_LOGIN) {
+        
+        [self loadWebPage];
+                    
+    }else {
+            
         [self performSegueWithIdentifier:@"LoginFromMain" sender:self];
     }
 }
@@ -25,11 +34,45 @@
 {
     [super viewDidLoad];
     
-    NSURL *url = [NSURL URLWithString:@"http://dev.zh.ongl.in/client/calendar"];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-    [_webview loadRequest:request];
+    [_webview setDelegate:self];
+
 }
 
+- (void) webViewDidStartLoad:(UIWebView *)webView
+{
+    NSLog(@"webViewDidStartLoad");
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    HUD.delegate = self;
+    [HUD setLabelText:@"正在读取资料..."];
+    [self.view addSubview:HUD];
+    [HUD show:YES];
+    
+}
+- (void) webViewDidFinishLoad:(UIWebView *)webView
+{
+    NSLog(@"webViewDidFinishLoad");
+    
+    [HUD hide:YES];
+}
+- (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    NSLog(@"didFailLoadWithError:%@", error);
+    
+    [HUD hide:YES];
+}
+         
+- (void)loadWebPage
+{
+    NSURL *url = [NSURL URLWithString:@"http://dev.zh.ongl.in/client/calendar"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    NSString *sessionId = [USER valueForKey:@"sessionId"];
+    NSString *sessionIdString = [NSString stringWithFormat:@"sessionid=%@", sessionId];;
+    [request setValue:sessionIdString forHTTPHeaderField:@"Cookie"];
+    [_webview loadRequest:request];
+}
+         
+         
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -39,7 +82,6 @@
 - (IBAction)backBtnAction:(id)sender {
     
     [_webview goBack];
-    
 }
 
 @end

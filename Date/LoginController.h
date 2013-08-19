@@ -8,17 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
-#import <TencentOpenAPI/TencentOAuth.h>
-#import "UMSocial.h"
 
-@interface LoginController : UIViewController
-{
-    TencentOAuth * _tencentOAuth;
-    NSMutableArray* _permissions;
-    
-}
+@interface LoginController : UIViewController<MBProgressHUDDelegate>
 
-@property (nonatomic) IBOutlet UIButton *qqLoinnBtn;
-@property (nonatomic) IBOutlet UIButton *sinaLoinnBtn;
+@property (strong, nonatomic) IBOutlet UITextField *inputTF;
+
+@property (strong, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
