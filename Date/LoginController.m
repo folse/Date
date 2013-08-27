@@ -9,6 +9,7 @@
 #import "LoginController.h"
 #import "AFHTTPClient.h"
 #import "AFJSONRequestOperation.h"
+#import <QuartzCore/CoreAnimation.h>
 
 @interface LoginController ()
 
@@ -35,7 +36,23 @@ NSString *inputType = @"mobile";
 {
     [super viewDidLoad];
 	
-    [_inputTF becomeFirstResponder];
+    //[_inputTF becomeFirstResponder];
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
+    
+    [animation setDuration:60];
+    
+    [animation setRepeatCount:10];
+    
+    [animation setAutoreverses:YES];//自动反向动画
+    
+    [animation setFromValue:[NSNumber numberWithFloat:0]];
+    
+    [animation setToValue:[NSNumber numberWithFloat:580.0]];
+    
+    [animation setDelegate:self];
+    
+    [_bgIV.layer addAnimation:animation forKey:@"firstView-Opacity"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -168,7 +185,12 @@ NSString *inputType = @"mobile";
             
             [self dismissViewControllerAnimated:YES completion:nil];
             
+        }else if ([[JSON valueForKey:@"ret"] integerValue] == -1) {
+            
+            //1password error
+            
         }
+
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         

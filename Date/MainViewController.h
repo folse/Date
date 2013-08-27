@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 
-@interface MainViewController : UIViewController<MBProgressHUDDelegate, UIWebViewDelegate>
+#import "RESideMenu.h"
+
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+@interface MainViewController : UIViewController<MBProgressHUDDelegate, UIWebViewDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) IBOutlet UIWebView *webview;
+
+@property (strong, readonly, nonatomic) RESideMenu *sideMenu;
+
+
 
 
 @end

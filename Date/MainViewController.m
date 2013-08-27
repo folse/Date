@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()
 
@@ -35,10 +36,15 @@ MBProgressHUD *HUD;
     [super viewDidLoad];
     
     [_webview setDelegate:self];
-
+    
+    
+}
+- (IBAction)swipeAction:(id)sender {
+    
+    [self menuBtnAction:self];
 }
 
-- (void) webViewDidStartLoad:(UIWebView *)webView
+- (void)webViewDidStartLoad:(UIWebView *)webView
 {
     NSLog(@"webViewDidStartLoad");
     
@@ -52,6 +58,8 @@ MBProgressHUD *HUD;
 - (void) webViewDidFinishLoad:(UIWebView *)webView
 {
     NSLog(@"webViewDidFinishLoad");
+    
+    [webView stringByEvaluatingJavaScriptFromString:@"document.body.style.webkitTouchCallout='none';"];
     
     [HUD hide:YES];
 }
@@ -82,6 +90,31 @@ MBProgressHUD *HUD;
 - (IBAction)backBtnAction:(id)sender {
     
     [_webview goBack];
+}
+
+- (IBAction)menuBtnAction:(id)sender
+{
+    if (!_sideMenu) {
+        RESideMenuItem *homeItem = [[RESideMenuItem alloc] initWithTitle:@"首页" action:^(RESideMenu *menu, RESideMenuItem *item) {
+            
+            [menu hide];
+        }];
+        
+        RESideMenuItem *logOutItem = [[RESideMenuItem alloc] initWithTitle:@"注销" action:^(RESideMenu *menu, RESideMenuItem *item) {
+            
+            [menu hide];
+            
+            [USER setBool:NO forKey:@"userLogined"];
+            
+            [self performSegueWithIdentifier:@"LoginFromMain" sender:self];
+        }];
+        
+        _sideMenu = [[RESideMenu alloc] initWithItems:@[homeItem,logOutItem]];
+        _sideMenu.verticalOffset = IS_WIDESCREEN ? 110 : 76;
+        
+    }
+    
+    [_sideMenu show];
 }
 
 @end
